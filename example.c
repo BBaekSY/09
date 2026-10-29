@@ -1,23 +1,25 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
 #define SIZE 5
 
 int main(void)
 {
     int i;
-    int average;
-    int sum = 0;
     int grade[SIZE];
+    int score[SIZE];
 
     for (i = 0; i < SIZE; i++) {
-        printf("Enter a score: ");
-        scanf("%d", &grade[i]);
-        sum += grade[i];
+        grade[i] = rand() % 100;
     }
 
-    average = sum / SIZE;
+    for (i = 0; i < SIZE; i++) {
+        score[i] = grade[i];
+    }
 
-    printf("Average: %d\n", average);
+    for (i = 0; i < SIZE; i++) {
+        printf("grade[%d] = %d, score[%d] = %d\n",
+               i, grade[i], i, score[i]);
+    }
 
     return 0;
 }
