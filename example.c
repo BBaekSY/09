@@ -5,17 +5,19 @@
 int main(void)
 {
     int i;
+    int average;
+    int sum = 0;
     int grade[SIZE];
 
-    printf("Enter scores for 5 students:\n");
-
     for (i = 0; i < SIZE; i++) {
+        printf("Enter a score: ");
         scanf("%d", &grade[i]);
+        sum += grade[i];
     }
 
-    for (i = 0; i < SIZE; i++) {
-        printf("grade[%d] = %d\n", i, grade[i]);
-    }
+    average = sum / SIZE;
+
+    printf("Average: %d\n", average);
 
     return 0;
 }
